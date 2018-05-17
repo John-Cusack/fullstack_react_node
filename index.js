@@ -33,5 +33,11 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = 8081 || process.env.PORT;
+if (process.env.NODE_ENV === "production") {
+  var PORT = process.env.PORT;
+} else {
+  var PORT = 8081;
+}
+
+//const PORT = 8081 || process.env.PORT;
 app.listen(PORT);
